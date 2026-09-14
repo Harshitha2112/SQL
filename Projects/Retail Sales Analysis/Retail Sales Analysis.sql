@@ -164,3 +164,5 @@ AS
 	)
 SELECT shift,COUNT(*) AS total_orders FROM hourly_sales
 GROUP BY shift
+
+----END OF DATA ANALYSIS----
