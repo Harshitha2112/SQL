@@ -28,8 +28,7 @@ The projects demonstrate my ability to use SQL to work with real-world datasets 
 | Project | Description | Key Concepts |
 |---|---|---|
 | 🛒 Retail Sales Analysis | Analysis of retail sales data to identify sales trends and business insights. | SELECT, WHERE, GROUP BY, JOIN, Aggregations |
-| 📦 [Add Project Name] | [Short description of your project] | [SQL concepts used] |
-| 📊 [Add Project Name] | [Short description of your project] | [SQL concepts used] |
+
 
 ## 🗂️ Repository Structure
 
