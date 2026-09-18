@@ -33,7 +33,7 @@ The projects demonstrate my ability to use SQL to work with real-world datasets 
 
 ## 🗂️ Repository Structure
 
-```text
+
 SQL-Projects/
 │
 ├── Retail-Sales-Analysis/
