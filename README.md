@@ -33,7 +33,7 @@ The projects demonstrate my ability to use SQL to work with real-world datasets 
 
 ## 🗂️ Repository Structure
 
-
+```
 SQL-Projects/
 │
 ├── Retail-Sales-Analysis/
@@ -49,6 +49,7 @@ SQL-Projects/
 │   └── README.md
 │
 └── README.md
+````
 
 ## 🎯 Objective
 
@@ -64,3 +65,7 @@ The main objective of these projects is to strengthen my SQL and data analysis s
 
 **Harshitha**
 
+```
+
+You can keep this as the **main README for your SQL Projects repository**, and then have a separate small README inside each individual project folder.
+```
