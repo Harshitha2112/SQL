@@ -1,4 +1,4 @@
-````markdown
+
 # 📊 SQL Projects
 
 ## 📌 About This Repository
@@ -49,7 +49,6 @@ SQL-Projects/
 │   └── README.md
 │
 └── README.md
-````
 
 ## 🎯 Objective
 
