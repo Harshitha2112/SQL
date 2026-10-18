@@ -118,12 +118,81 @@ SELECT SPLIT_PART('APPLE BANANA MANGO',' ',1)
 
 
 
---9.
+--9.Count the number of content items in each genre
+
+SELECT  UNNEST(STRING_TO_ARRAY(listed_in,',')) as Genre,COUNT(show_id) AS total_content
+FROM netflix
+GROUP BY Genre
 
 
 
+--10. find each year and the average numbers of content release by india on netflix.return top 5 year with highest avg content release
+
+SELECT EXTRACT(YEAR FROM TO_DATE(date_added ,'MONTH DD,YYYY')) AS year,
+COUNT(*) AS YEARLY_CONTENT ,
+ROUND(COUNT(*)::numeric/(SELECT COUNT(*) FROM netflix WHERE country='India')*100::numeric,2) AS AVG_CONTENT
+FROM netflix
+WHERE country='India'
+GROUP BY year
+ORDER BY 3 DESC
+LIMIT 5
 
 
+
+--11. List all the movies that are documentaries
+
+
+SELECT * 
+FROM netflix
+WHERE listed_in ILIKE '%documentaries%'
+
+
+
+--12. find all content without a director
+
+
+SELECT * 
+FROM netflix
+WHERE director IS NULL
+
+
+--13. find how many movies actor 'Salman khan' appeared in last 10 years
+
+SELECT *
+FROM netflix
+WHERE casts ILIKE '%Salman Khan%'
+AND release_year > EXTRACT(YEAR FROM CURRENT_DATE)-10
+
+
+
+--14. find the top 10 actors who have appeared in the highest number of movies produced in india
+
+SELECT UNNEST(STRING_TO_ARRAY(casts,',')) as actors,COUNT(*)
+FROM netflix
+WHERE country ILIKE '%India%'
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 10
+
+
+--15. categorize the content based on the presence of the keyords 'kill' and 'violence' in the description field.
+------label content containing these keywords as 'bad' and all other content as 'good'. 
+------count how many items fall into each category.
+
+WITH CTE AS (
+SELECT *,
+		CASE
+		WHEN 
+			description ILIKE '%KILL%' OR
+			description ILIKE '%violence%' THEN 'bad'
+			ELSE 'Good'
+		END category
+FROM netflix
+	)
+
+SELECT category,COUNT(*) AS TOTAL_CONTENT
+FROM CTE
+GROUP BY 1
 
 
 
